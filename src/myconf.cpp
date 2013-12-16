@@ -192,6 +192,7 @@ char* my_conf_get_conf_by_key(char* key,MY_CONF_INS* conf)
         //如果找到这个key
         if( strcmp(key, (*iter)->key) == 0 )
         {
+            MY_LOG_DEBUG("key is [%s], value is [%s]", key, (*iter)->value);
             return (*iter)->value;
         }
     }
@@ -210,7 +211,7 @@ bool my_conf_get_int32(char* key, MY_CONF_INS* conf, int& input_value, bool user
     bool read_digit = false;
 
     char* res_str = my_conf_get_conf_by_key(key, conf);
-    
+
     if(res_str == NULL)
     {
         if( user_int == true)
@@ -243,6 +244,7 @@ bool my_conf_get_int32(char* key, MY_CONF_INS* conf, int& input_value, bool user
             return false;
         }
     }
+    input_value = flag * input_value;
     return true;
 }
 
