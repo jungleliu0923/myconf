@@ -4,7 +4,7 @@ myconf是一个可以方便读取key-value配置的C/C++库。<br>
 2)、可以支持读取int(正负数), unsigend int, char *, 支持默认缺省值。<br>
 3)、string如果有特殊字符（如空格等）需要加上""(如"你 好");<br>
 4)、使用完必须调用关闭日志文件句柄，否则有内存泄漏。<br>
-5)、需要使用[mylog](http://www.oschina.net/p/mylog)编译依赖<br>
+5)、需要使用[mylog](http://www.oschina.net/p/mylog)编译依赖, 编译主要修改Makefile置顶工作目录WORKROOT，然后通过makefile.env指定MYLOG、MYCONF的路径<br>
 
 2 API<br>
 1) 初始化日志句柄
